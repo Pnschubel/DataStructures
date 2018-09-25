@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=myLinkedList()
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ myLinkedList\r\n
+comment1.params=element
+comment1.target=void\ addFirst(java.lang.Object)
+comment1.text=\r\n\ Adds\ element\ to\ the\ front\ of\ the\ LinkedList\r\n\ @param\ element\ the\ element\ added\ to\ the\ front\ of\ the\ list.\r\n
+comment2.params=
+comment2.target=java.lang.Object\ getFirst()
+comment2.text=\r\n\ Gets\ the\ first\ element\ in\ the\ LinkedList\r\n\ @param\ none\r\n\ @return\ Object\ the\ element\ at\ the\ front\ of\ the\ list\r\n
+comment3.params=
+comment3.target=java.lang.Object\ removeFirst()
+comment3.text=\r\n\ Removes\ the\ first\ element\ in\ the\ LinkedList\r\n\ @param\ none\r\n\ @return\ Object\ the\ element\ at\ the\ beginning\ of\ the\ list\r\n
+numComments=4
