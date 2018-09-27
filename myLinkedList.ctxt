@@ -11,4 +11,6 @@ comment2.text=\r\n\ Gets\ the\ first\ element\ in\ the\ LinkedList\r\n\ @param\ 
 comment3.params=
 comment3.target=java.lang.Object\ removeFirst()
 comment3.text=\r\n\ Removes\ the\ first\ element\ in\ the\ LinkedList\r\n\ @param\ none\r\n\ @return\ Object\ the\ element\ at\ the\ beginning\ of\ the\ list\r\n
-numComments=4
+comment4.params=
+comment4.target=myLinkedList.LinkedListIterator\ listIterator()
+numComments=5

@@ -61,4 +61,46 @@ public class myLinkedList
         first = first.next;
         return data;
     }
+    
+    public LinkedListIterator listIterator(){
+        return new LinkedListIterator();
+    }
+    
+    //Class for the iterator
+    class LinkedListIterator{
+        private Node position;//the position of the iterator
+        private Node previous;//the previous position of the iterator -- for removal
+        private boolean isAfterNext;//makes sure we've moved before error.
+        
+        public LinkedListIterator(){
+            position = null;
+            previous = null;
+            isAfterNext = false;
+        }
+        
+        public Object next(){
+            if(!hasNext()){throw new NoSuchElementException();}
+            
+            isAfterNext = true; //because we just called next
+            
+            //moves previous over to current position
+            previous = position;
+            
+            if(position == null){//at very beginning of list
+                position = first;
+            }else{
+                position = position.next;
+            }
+            
+            return previous;
+        }
+        
+        public boolean hasNext(){
+            if(position == null){
+                return first != null;
+            }else{
+                return position.next != null;
+            }
+        }
+    }
 }
