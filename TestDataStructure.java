@@ -6,13 +6,8 @@
  */
 public class TestDataStructure
 {
-    public static void LLtest(){
+    public static myLinkedList createLinkedList(){
         myLinkedList list = new myLinkedList();
-        /*
-        String word = "word";
-        list.addFirst(word);
-        list.addFirst(new String("two"));
-        */
         
         list.addFirst(new String("this"));
         list.addFirst(new String("is"));
@@ -22,16 +17,21 @@ public class TestDataStructure
         list.addFirst(new String("test"));
         list.addFirst(new String("and"));
         list.addFirst(new String("waffle"));
-        System.out.println(list);
-        list.reverse();
-        System.out.println(list);
+        return list;
+    }
+    public static void LLtest(myLinkedList list){
+        //System.out.println(list);
+        //list.reverse();
+        //System.out.println(list);
         /*
          * //old school -- must cast since getFirst() returns object
         String word2 = (String)list.getFirst();
         System.out.println(word2);
         */
+        System.out.println(list.size());
     }
-    public static void QA(){
+    public static void QA(myLinkedList list){
+        /*
         myLinkedList list = new myLinkedList();
         //Tests jankyAddFirst to try and get an error.
         list.jankyAddFirst(new String("this"));
@@ -42,14 +42,30 @@ public class TestDataStructure
         list.jankyAddFirst(new String("test"));
         list.jankyAddFirst(new String("and"));
         list.jankyAddFirst(new String("waffle"));
-        
-        if (list.getFirst() == null){
-            System.out.println("Error");
+        if (list.removeFirst().equals(list.removeFirst())){
+            System.out.println("Error: LL points to itself");
+        }
+        */
+        ListIterator iter = list.listIterator();
+        iter.remove();
+    }
+    public static void queueTester(){
+        LinkedListQueuestudent q = new LinkedListQueuestudent();
+        q.add("Tom");
+        q.add("Diana");
+        q.add("Mark");
+        q.add("Harry");
+        q.firstToLast();
+        q.add("Bob");
+        while (!q.empty()){
+            System.out.println(q.remove()+" ");
         }
     }
     public static void main (String[] args){
-        //LLtest();
-        QA();
+        myLinkedList list = createLinkedList();
+        //LLtest(list);
+        //QA(list);
+        queueTester();
     }
 
 }

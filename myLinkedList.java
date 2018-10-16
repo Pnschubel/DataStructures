@@ -54,6 +54,25 @@ public class myLinkedList
     }
     
     /**
+     * A size method to get the size of the linked list
+     * @param none
+     * @return int the size of the LL
+     */
+    public int size(){
+        if (first == null){return 0;}
+        Node temp = first;
+        int count = 1;
+        
+        //Goes through to find size of LL
+        while (temp.next != null){
+            temp = temp.next;
+            count++;
+        }
+        
+        return count;
+    }
+    
+    /**
      * Gets the first element in the LinkedList
      * @param none
      * @return Object the element at the front of the list
@@ -75,7 +94,7 @@ public class myLinkedList
         return data;
     }
     
-    public LinkedListIterator listIterator(){
+    public ListIterator listIterator(){
         return new LinkedListIterator();
     }
     
@@ -144,8 +163,9 @@ public class myLinkedList
         return hold;
     }
     
+   
     //Class for the iterator
-    class LinkedListIterator{
+    class LinkedListIterator implements ListIterator{
         private Node position;//the position of the iterator
         private Node previous;//the previous position of the iterator -- for removal
         private boolean isAfterNext;//makes sure we've moved before error.
@@ -192,6 +212,15 @@ public class myLinkedList
             }else{
                 return position.next != null;
             }
+        }
+        
+        /**
+         * Janky hasNext to test our QA abilities
+         * @param none
+         * @return boolean janky whether or not anothe lement after said element LL
+         */
+        public boolean jankyHasNext(){
+            return position != null;
         }
         
         /**

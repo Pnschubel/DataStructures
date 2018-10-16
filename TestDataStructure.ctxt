@@ -1,8 +1,12 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ LLtest()
-comment1.params=
-comment1.target=void\ QA()
-comment2.params=args
-comment2.target=void\ main(java.lang.String[])
-numComments=3
+comment0.target=myLinkedList\ createLinkedList()
+comment1.params=list
+comment1.target=void\ LLtest(myLinkedList)
+comment2.params=list
+comment2.target=void\ QA(myLinkedList)
+comment3.params=
+comment3.target=void\ queueTester()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
