@@ -13,16 +13,16 @@ public class QueueTester
       System.out.println();
       System.out.println("Expected: Diana Harry Tom");
       
-      q = new CircularArrayQueue();
-      q.add("Tom");
-      q.add("Diana");
-      q.add("Harry");
+      CircularArrayQueue m = new CircularArrayQueue();
+      m.add("Tom");
+      m.add("Diana");
+      m.add("Harry");
       System.out.println("\n\nExpected: Harry Tom Diana");
-      q.lastToFirst();
+      m.lastToFirst();
       System.out.print("Result: ");
-      while (!q.empty())
+      while (!m.empty())
       {
-         System.out.print(q.remove() + " ");
+         System.out.print(m.remove() + " ");
       }
       System.out.println();
     }

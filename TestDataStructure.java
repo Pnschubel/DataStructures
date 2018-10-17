@@ -21,14 +21,21 @@ public class TestDataStructure
     }
     public static void LLtest(myLinkedList list){
         //System.out.println(list);
-        //list.reverse();
+        list.reverse();
         //System.out.println(list);
         /*
          * //old school -- must cast since getFirst() returns object
         String word2 = (String)list.getFirst();
         System.out.println(word2);
         */
-        System.out.println(list.size());
+        System.out.println(list);
+        
+        System.out.println("\nContain somewhat? Expect True: " + list.contains("somewhat"));
+        System.out.println("Contain omega? Expect False: " + list.contains("omega"));
+        System.out.println("Get value of Node 3. Expect test: " + list.get(3));
+        System.out.println("Setting value of Node 3 to PARTY.");list.set(3, "PARTY");
+        
+        System.out.println("\n" + list);
     }
     public static void QA(myLinkedList list){
         /*
@@ -63,9 +70,9 @@ public class TestDataStructure
     }
     public static void main (String[] args){
         myLinkedList list = createLinkedList();
-        //LLtest(list);
+        LLtest(list);
         //QA(list);
-        queueTester();
+        //queueTester();
     }
 
 }

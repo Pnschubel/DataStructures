@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class myLinkedList
 {
     private Node first; //Linked list must know where the first is.
-
+    private int currentSize;
     //The linked list has to access all of the nodes, but nodes still need to be private.
     //So inner class for nodes.
     class Node{
@@ -28,6 +28,7 @@ public class myLinkedList
     {
         //initizlise linked list variables
         first = null;
+        currentSize = 0;
     }
 
     /**
@@ -39,6 +40,7 @@ public class myLinkedList
         newNode.data = element;//points to the object
         newNode.next = first; //Moves along the path
         first = newNode;//Says that the newNode is first.
+        currentSize += 1;
     }
     
     /**
@@ -91,6 +93,7 @@ public class myLinkedList
         if (first == null){throw new NoSuchElementException();}
         Object data = first.data;
         first = first.next;
+        currentSize -= 1;
         return data;
     }
     
@@ -163,6 +166,64 @@ public class myLinkedList
         return hold;
     }
     
+    /**16.1**/
+    /**
+     * Helper method to follow n nodes in LL
+     * @pre LL must have at least n nodes
+     * @param int n the number of nodes to follow
+     * @return Node the node that is node number n
+     */
+    private Node getNode(int n){
+        Node desiredNode; //the node we use to follow all the nodes down to the one we want
+        int count = 1;
+        desiredNode = first; //starting location
+        while (count != n){
+            desiredNode = desiredNode.next;
+            count += 1;
+        }
+        return desiredNode;
+    }
+    
+    /**
+     * Method to get the data located at node #n
+     * @param int n the desired node
+     * @return Object 
+     */
+    public Object get(int n){
+        if (n > currentSize){throw new NoSuchElementException();}
+        Node temp = this.getNode(n);
+        return temp.data;
+    }
+    
+    /**
+     * Method to set the data located at node #n
+     * @param int n the desired node Object obj the data to be set
+     * @return none
+     */
+    public void set(int n, Object obj){
+        if (n > currentSize){throw new NoSuchElementException();}
+        Node change = this.getNode(n);
+        change.data = obj;
+    }
+    /**End of 16.1**/
+    
+    /**Start of 16.4**/
+    /**
+     * Sees whether an object is in the LL
+     * @param Object obj the object to check for
+     * @return boolean whether or not obj is in LL
+     */
+    public boolean contains(Object obj){
+        Node temp = first;
+        boolean flag = false; //var to tell us whether it is in LL or not
+        while (!flag && temp.next != null){
+            if (temp.data.equals(obj)){
+                flag = true;
+            }
+            temp = temp.next;
+        }
+        return flag;
+    }
    
     //Class for the iterator
     class LinkedListIterator implements ListIterator{
@@ -240,7 +301,7 @@ public class myLinkedList
                 position.next = newNode;
                 position = newNode;
             }
-            
+            currentSize += 1;
             isAfterNext = false;
         }
         
@@ -259,6 +320,7 @@ public class myLinkedList
             }
             position = previous;
             isAfterNext = false;
+            currentSize -= 1;
             return position;
         }
     }

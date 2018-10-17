@@ -26,7 +26,7 @@ public class CircularArrayQueue
       Checks whether this queue is empty.
       @return true if this queue is empty
    */
-   public boolean empty() { return currentSize == 0; }
+   public boolean empty() {return currentSize == 0;}
 
    /**
       Adds an element to the tail of this queue.
@@ -82,12 +82,15 @@ public class CircularArrayQueue
     
    public void lastToFirst(){//Takes last element, moves it to the front
        if (currentSize == 0){return;}
+       
        Object temp = elements[tail-1];
        elements[tail-1] = null;
+       
        if (head != 0){
            elements[head - 1] = temp;
            head -= 1;
-        }else{
+        }
+        else{
             head = currentSize;
             elements[currentSize] = temp;
         }        
