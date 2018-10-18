@@ -32,7 +32,7 @@ public class TestDataStructure
         
         System.out.println("\nContain somewhat? Expect True: " + list.contains("somewhat"));
         System.out.println("Contain omega? Expect False: " + list.contains("omega"));
-        System.out.println("Get value of Node 3. Expect test: " + list.get(3));
+        System.out.println("Get value of Node 3. Expect A: " + list.get(3));
         System.out.println("Setting value of Node 3 to PARTY.");list.set(3, "PARTY");
         
         System.out.println("\n" + list);

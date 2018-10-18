@@ -79,20 +79,34 @@ public class CircularArrayQueue
        head += 1;
        tail += 1;
     }
+   
+   public Object[] returnArray(){
+    return elements;
+    }
+   public int getTail(){
+    return tail;
+   }
     
    public void lastToFirst(){//Takes last element, moves it to the front
        if (currentSize == 0){return;}
        
-       Object temp = elements[tail-1];
-       elements[tail-1] = null;
+       Object temp;
+       
+       if (tail != 0){
+           temp = elements[tail-1];
+           elements[tail-1] = null;
+       }else{
+           temp = elements[currentSize - 1];
+           elements[currentSize - 1] = null;
+       }
        
        if (head != 0){
            elements[head - 1] = temp;
            head -= 1;
         }
         else{
-            head = currentSize;
-            elements[currentSize] = temp;
+            head = elements.length - 1;
+            elements[head] = temp;
         }        
     }
 }

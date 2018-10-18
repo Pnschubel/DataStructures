@@ -103,7 +103,7 @@ public class myLinkedList
     
     public void reverse(){
         if (first == null) return;
-        /*
+        
         Node previous = first;
         Node current = first.next;
         Node next = null;
@@ -115,7 +115,7 @@ public class myLinkedList
             current = next;
         }
         first = previous;
-        */
+        
         
         /*
         //The Janky Code I promised Justas that doesn't even work
@@ -224,7 +224,8 @@ public class myLinkedList
         }
         return flag;
     }
-   
+    /**End of 16.4**/
+    
     //Class for the iterator
     class LinkedListIterator implements ListIterator{
         private Node position;//the position of the iterator

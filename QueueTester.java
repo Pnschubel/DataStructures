@@ -6,6 +6,7 @@ public class QueueTester
       q.add("Diana");
       q.add("Harry");
       q.firstToLast();
+      System.out.print("Result: ");
       while (!q.empty())
       {
          System.out.print(q.remove() + " ");
@@ -20,6 +21,7 @@ public class QueueTester
       System.out.println("\n\nExpected: Harry Tom Diana");
       m.lastToFirst();
       System.out.print("Result: ");
+      
       while (!m.empty())
       {
          System.out.print(m.remove() + " ");
@@ -33,6 +35,7 @@ public class QueueTester
       q.add("Diana");
       q.add("Harry");
       q.firstToLast();
+      System.out.print("Result: ");
       while (!q.empty())
       {
          System.out.print(q.remove() + " ");
